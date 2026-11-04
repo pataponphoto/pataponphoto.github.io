@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>사진 아카이브 · Patapon Photo</title>
+<meta name="description" content="Patapon Photo — 행사와 코스프레 사진 아카이브">
+<meta property="og:title" content="사진 아카이브 · Patapon Photo">
+
+<link rel="stylesheet" href="./style.css"></head><body>
+<a class="skip" href="#content">본문으로</a>
+<header><a class="brand" href="./">Patapon Photo<span>PHOTO ARCHIVE</span></a>
+<nav aria-label="사진 분류"><a href="./">전체</a><a href="./#personal">개인촬영</a><a href="./#event">행사장</a><a href="./#events">행사별</a><a href="./#models">모델별</a><a href="./#search">검색</a></nav></header>
+<main id="content"><section class="archive" aria-labelledby="archive-title">
+<div class="section-head"><h1 id="archive-title">전체 사진</h1><span id="count" aria-live="polite"></span></div>
+<form id="search-form" role="search"><label class="sr-only" for="search">사진 검색</label><input id="search" type="search" placeholder="행사, 작품, 모델 이름으로 검색" autocomplete="off"><button>검색</button></form>
+<div id="filters" class="filters" aria-label="세부 분류"></div>
+<div id="grid" class="grid"></div><p id="empty" hidden>일치하는 사진이 없습니다. 다른 분류나 검색어를 선택해 주세요.</p>
+<noscript>사진 목록을 보려면 JavaScript를 활성화해 주세요.</noscript></section>
+<script src="./data.js"></script><script src="./gallery.js"></script></main><footer>Patapon Photo <span>사진으로 기록하는 순간들</span></footer>
+</body></html>
