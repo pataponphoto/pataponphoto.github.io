@@ -23,7 +23,7 @@ function render(){
     if(mode==='personal'&&!p.categories.some(c=>['갠촬','개인촬영'].includes(c)))return false;
     if(mode==='event'&&!p.categories.includes('행사장'))return false;
     if(field&&selected&&!(Array.isArray(p[field])?p[field].includes(selected):p[field]===selected))return false;
-    return `${p.title} ${p.categories.join(' ')} ${p.models.join(' ')}`.toLocaleLowerCase().includes(q.trim().toLocaleLowerCase());
+    return `${p.title} ${p.caption||''} ${p.author||''} ${p.categories.join(' ')} ${p.models.join(' ')}`.toLocaleLowerCase().includes(q.trim().toLocaleLowerCase());
   });
   grid.replaceChildren();
   for(const p of visible){
