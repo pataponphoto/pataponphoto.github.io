@@ -29,9 +29,16 @@ function render(){
   for(const p of visible){
     const a=document.createElement('a');a.className='card';a.href=p.url;
     const img=document.createElement('img');img.src=p.preview;img.alt=p.title;img.loading='lazy';img.decoding='async';
+    const frame=document.createElement('span');frame.className='numbered-photo';
+    if(p.photo_number!=null){
+      const badge=document.createElement('span');badge.className='photo-number';
+      badge.textContent=`#${p.photo_number}`;badge.setAttribute('aria-label',`사진 번호 ${p.photo_number}`);
+      frame.append(badge);
+    }
+    frame.append(img);
     const title=document.createElement('h2');title.textContent=p.title;
     const model=document.createElement('p');model.textContent=p.models.join(', ');
-    a.append(img,title,model);grid.append(a);
+    a.append(frame,title,model);grid.append(a);
   }
   document.querySelector('#count').textContent=`(${visible.length})`;
   document.querySelector('#empty').hidden=visible.length!==0;
